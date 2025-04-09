@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Agriculture AI System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">Sustainable Agriculture AI</h1>
+            <p class="subtitle">Multi-Agent Decision Support System</p>
+            <div class="illustration">
+                <img src="/assets/icons/farmer.png" alt="Agriculture Illustration" class="illustration-img">
+            </div>
+        </header>
+
+        <main class="agent-container">
+            <section class="agent-card" id="farmer-agent">
+                <div class="card-header">
+                    <img src="/assets/icons/farmer.png" alt="Farmer Icon" class="agent-icon">
+                    <h2 class="agent-title">Farmer Advisor</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="land-type">Land Type</label>
+                        <select id="land-type" class="form-control">
+                            <option value="" disabled selected>Select land type</option>
+                            <option value="arable">Arable</option>
+                            <option value="pastoral">Pastoral</option>
+                            <option value="mixed">Mixed</option>
+                            <option value="urban">Urban</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="soil-quality">Soil Quality</label>
+                        <select id="soil-quality" class="form-control">
+                            <option value="" disabled selected>Select soil quality</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </div>
+                    <button id="farmer-submit" class="btn">Get Recommendations</button>
+                    <div class="agent-response" id="farmer-response"></div>
+                    <div class="chat-container">
+                        <div class="chat-messages" id="farmer-chat">
+                          <div class="agent-message">
+                            <img src="/assets/icons/farmer.png" class="message-icon">
+                            <div class="message-content">
+                              Hi! Tell me about your land and financial goals.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="chat-input">
+                          <input type="text" id="farmer-input" placeholder="Type your message...">
+                          <button id="farmer-send" class="btn send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                          </button>
+                        </div>
+                      </div>
+                </div>
+            </section>
+
+            <section class="agent-card" id="market-agent">
+                <div class="card-header">
+                    <img src="/assets/icons/market.png" alt="Market Icon" class="agent-icon">
+                    <h2 class="agent-title">Market Researcher</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="region">Region</label>
+                        <select id="region" class="form-control">
+                            <option value="" disabled selected>Select region</option>
+                            <option value="north">Northern</option>
+                            <option value="south">Southern</option>
+                            <option value="east">Eastern</option>
+                            <option value="west">Western</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="crop-type">Crop Type</label>
+                        <select id="crop-type" class="form-control">
+                            <option value="" disabled selected>Select crop type</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="grains">Grains</option>
+                        </select>
+                    </div>
+                    <button id="market-submit" class="btn">Analyze Market</button>
+                    <div class="agent-response" id="market-response"></div>
+                </div>
+                <div class="chat-container">
+                    <div class="chat-messages" id="farmer-chat">
+                      <div class="agent-message">
+                        <img src="/assets/icons/market.png" class="message-icon">
+                        <div class="message-content">
+                          Hi! Tell me about your market goals.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="chat-input">
+                      <input type="text" id="farmer-input" placeholder="Type your message...">
+                      <button id="farmer-send" class="btn send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                      </button>
+                    </div>
+                  </div>
+            </section>
+
+            <section class="agent-card" id="weather-agent">
+                <div class="card-header">
+                    <img src="/assets/icons/weather.png" alt="Weather Icon" class="agent-icon">
+                    <h2 class="agent-title">Weather Advisor</h2>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="season">Season</label>
+                        <select id="season" class="form-control">
+                            <option value="" disabled selected>Select season</option>
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                            <option value="autumn">Autumn</option>
+                            <option value="winter">Winter</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="weather-pattern">Weather Pattern</label>
+                        <select id="weather-pattern" class="form-control">
+                            <option value="" disabled selected>Select weather</option>
+                            <option value="dry">Dry</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="wet">Wet</option>
+                        </select>
+                    </div>
+                    <button id="weather-submit" class="btn">Get Weather Advice</button>
+                    <div class="agent-response" id="weather-response"></div>
+                </div>
+                <div class="chat-container">
+                    <div class="chat-messages" id="farmer-chat">
+                      <div class="agent-message">
+                        <img src="/assets/icons/weather.png" class="message-icon">
+                        <div class="message-content">
+                          Hi! Tell me about your land and financial goals.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="chat-input">
+                      <input type="text" id="farmer-input" placeholder="Type your message...">
+                      <button id="farmer-send" class="btn send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                      </button>
+                    </div>
+                  </div>
+            </section>
+        </main>
+
+        <section class="recommendation-section">
+            <h2 class="section-title">AI Recommendation</h2>
+            <div class="recommendation-content" id="final-recommendation">
+                <p>Complete all agent sections to get a comprehensive recommendation.</p>
+            </div>
+            <button id="generate-report" class="btn btn-primary">Generate Full Report</button>
+        </section>
+    </div>
+
+    <script src="/database/database.js"></script>
+    <script src="/agents/farmerAgent.js"></script>
+    <script src="/agents/marketAgent.js"></script>
+    <script src="/agents/weatherAgent.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const generateReportBtn = document.getElementById('generate-report');
+            
+            generateReportBtn.addEventListener('click', function() {
+                const farmerRec = document.getElementById('farmer-response').innerHTML;
+                const marketRec = document.getElementById('market-response').innerHTML;
+                const weatherRec = document.getElementById('weather-response').innerHTML;
+                
+                if (!farmerRec || !marketRec || !weatherRec) {
+                    alert('Please complete all agent sections first');
+                    return;
+                }
+                
+                const finalRec = `
+                    <h3>Comprehensive Farming Recommendation</h3>
+                    <div class="recommendation-part">
+                        <h4>Farmer Advisor:</h4>
+                        ${farmerRec}
+                    </div>
+                    <div class="recommendation-part">
+                        <h4>Market Researcher:</h4>
+                        ${marketRec}
+                    </div>
+                    <div class="recommendation-part">
+                        <h4>Weather Advisor:</h4>
+                        ${weatherRec}
+                    </div>
+                    <div class="recommendation-summary">
+                        <h4>Final Advice:</h4>
+                        <p>Based on your inputs, we recommend focusing on crops that match your land type, 
+                        current market conditions, and seasonal weather patterns. Consider diversifying 
+                        your crops to mitigate risks.</p>
+                    </div>
+                `;
+                
+                document.getElementById('final-recommendation').innerHTML = finalRec;
+                
+                // Save to database
+                const db = window.AgriDB;
+                db.saveRecommendation({
+                    farmer: farmerRec,
+                    market: marketRec,
+                    weather: weatherRec,
+                    timestamp: new Date().toISOString()
+                });
+            });
+        });
+    </script>
+</body>
+</html>
